@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { connect } from 'react-redux';
 
 
 
-const Home = () => {
+
+const Home = (props) => {
 
     const [allPosts, setAllPosts] = useState([]);
     const [postSelected, setpostSelected] = useState([""]);
@@ -97,4 +99,6 @@ const Home = () => {
     )
 }
 
-export default Home;
+export default connect((state) => ({
+    allPosts: state.allPosts,
+}))(Home);
