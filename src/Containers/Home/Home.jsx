@@ -41,11 +41,10 @@ const Home = () => {
 
     const deletePost = async () => {
         setAllPosts(allPosts.filter(function (post) {
-            console.log("post.id",post.id)
             return post.id != postSelected
         }
         ))
-        console.log("eliminado:", allPosts)
+        hidePopUp();
     }
 
     return (
