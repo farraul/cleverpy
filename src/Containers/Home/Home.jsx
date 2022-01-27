@@ -41,7 +41,7 @@ const Home = () => {
 
     const deletePost = async () => {
         setAllPosts(allPosts.filter(function (post) {
-            return post.id != postSelected
+            return post.id = postSelected
         }
         ))
         hidePopUp();
