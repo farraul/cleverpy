@@ -65,7 +65,7 @@ const Home = () => {
                         </div>
 
                         <div onClick={() => seePopUp(run.id)} className='padding-each-post-delete'>
-                            Eliminar {run.id}
+                            Eliminar
                         </div>
                     </div>
                 )}

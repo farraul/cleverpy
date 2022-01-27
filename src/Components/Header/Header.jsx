@@ -19,8 +19,9 @@ const Header = () => {
                     <img className="logo" src={logo} />
                 </div>
                 <div className='header-menu'>
-                
                     <div className="header-menu-each-div" onClick={() => goToContainer("/")}>Posts</div>
+                    <div className="header-menu-each-div" onClick={() => goToContainer("/posts-deletes")}>Posts deletes</div>
+
                 </div>
             </div>
         </header>
