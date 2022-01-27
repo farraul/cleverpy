@@ -1,8 +1,8 @@
-import logo from './logo.svg';
-import './App.css';
-import Home from './Containers/Home/Home'
-import Header from './Componentes/Header/Header';
+import './App.scss';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
+import Home from './Containers/Home/Home'
+import Header from './Components/Header/Header';
 
 function App() {
   return (
@@ -11,7 +11,9 @@ function App() {
         <Header />
 
         <Routes>
+
           <Route path="/" element={<Home />} />
+
         </Routes>
       </BrowserRouter>
     </div>

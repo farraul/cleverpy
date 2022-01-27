@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import './Header.css';
 import logo from '../../assets/images/Logotipo.png';
 import { useNavigate } from 'react-router-dom';
 
