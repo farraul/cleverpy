@@ -8,4 +8,13 @@
 }
 .logo {
     height: 2em;
+    cursor: pointer;
+}
+.header-menu {
+    display: flex;
+    align-items: center;
+}
+.header-menu-each-div {
+    margin: 0em 1em;
+    cursor: pointer;
 }
