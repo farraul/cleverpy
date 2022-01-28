@@ -1,7 +1,8 @@
 import './App.scss';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import Home from './Containers/Home/Home'
+import Login from './Containers/Login/Login'
+import Posts from './Containers/Posts/Posts'
 import Header from './Components/Header/Header';
 
 function App() {
@@ -11,8 +12,9 @@ function App() {
         <Header />
 
         <Routes>
-
-          <Route path="/" element={<Home />} />
+          
+        <Route path="/" element={<Login />} />
+        <Route path="/posts" element={<Posts />} />
 
         </Routes>
       </BrowserRouter>

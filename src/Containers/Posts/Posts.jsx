@@ -1,54 +1,41 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
-
-
+import { UPDATE_POSTS } from '../../redux/types';
+import { LOAD_POSTS } from '../../redux/types';
 
 
 const Home = (props) => {
 
-    const [allPosts, setAllPosts] = useState([]);
     const [postSelected, setpostSelected] = useState([""]);
     let res;
-    let element_back = document.getElementById("pop-up-background-dark-full-width");
-    let elementSeePopUp = document.getElementById("pop-up-black-div-info");
-
-
-    useEffect(() => {
-        takePosts();
-    }, []);
-
-    const takePosts = async () => {
-        try {
-            res = await axios.get("https://jsonplaceholder.typicode.com/posts");
-            setAllPosts(res.data);
-        }
-        catch (error) {
-        }
-    }
-
 
     const seePopUp = (id_post) => {
         setpostSelected(id_post);
-        elementSeePopUp.classList.add("block-sreen-pop-up");
+        var element_back = document.getElementById("pop-up-background-dark-full-width");
         element_back.classList.add("see-background-full-dark");
     }
 
     const hidePopUp = async () => {
-        elementSeePopUp.classList.remove("block-sreenpop-up");
+        var element_back = document.getElementById("pop-up-background-dark-full-width");
         element_back.classList.remove("see-background-full-dark");
     }
 
 
     const deletePost = async () => {
-        setAllPosts(allPosts.filter(post => post.id !== postSelected))
+       let data_filter= props.allPosts.filter(post => post.id !== postSelected);
+       console.log("datafilter:",data_filter)
+        props.dispatch({ type: LOAD_POSTS, payload: data_filter });
+
         hidePopUp();
     }
 
     return (
         <div className='max-width-container-1200 home-container'>
             <div className='home-section-all-posts'>
-                {allPosts.map(run =>
+               
+               
+                { props.allPosts.map(run =>
 
                     <div key={run.id} className='home-section-all-posts-each-post'>
                         <div className='padding-each-post'>
@@ -75,7 +62,7 @@ const Home = (props) => {
 
 
 
-            <div id="pop-up-background-dark-full-width">
+            <div id="pop-up-background-dark-full-width" className=''>
                 <div className="pop-up-div-info" id="pop-up-black-div-info">
                     <div className="pop-up-div-info-title-cross">
                         <div className="closeWindow" id="X" onClick={() => hidePopUp()}>X</div>

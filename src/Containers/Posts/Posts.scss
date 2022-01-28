@@ -1,0 +1,98 @@
+.home-section-all-posts-each-post {
+    background-color: #eaeaea;
+    border-radius: 0.5em;
+    padding: 1.5em  0em 0em  0em;
+    margin: 1em 1em;
+    height: fit-content;
+    box-shadow: 1px 1px 8px #aaaaaa;
+    width: 100%;
+    max-width: 23em;
+}
+.home-section-all-posts {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2em 0em;
+}
+
+strong.uppercase {
+    text-transform: capitalize;
+}
+.padding-each-post {
+    padding: 0em 1em;
+}
+.padding-each-post-delete {
+    height: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: white;
+    background-color: #8a0510;
+    margin-top: 1em;
+    border-radius: 0em 0em 0.5em 0.5em;
+}
+
+/**/
+.pop-up-div-info{
+    background-color: #00718a;
+    top: 25%;
+    align-content: inherit;
+    font-size: 1.4em;
+    cursor: pointer; 
+    border-radius: 0.4em;
+    padding: 0.5em 0em 0em 0em;
+    display: block;
+    width: 100%;
+    max-width: 18em;
+}
+.see-background-full-dark{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.856);
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.buttons-pop-up {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.button-no-delete {
+    background-color: #3dab3d;
+    padding: 0.3em 1em;
+    color: white;
+    border-radius: 0em 0em 0em 0.2em;
+    width: 100%;
+    text-align: center;
+
+}
+.button-delete {
+    background-color: #8a0510;
+    padding: 0.3em 1em;
+    color: white;
+    border-radius: 0em 0em 0.2em 0em;
+    width: 100%;
+    text-align: center;
+ 
+}
+div#X {
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+}
+.pop-up-div-info-title {
+    color: white;
+    margin: 1em 0em 2em 0em;
+}
+.pop-up-div-info-title-cross {
+    display: flex;
+    padding: 0em 1em;
+    flex-direction: column;
+}
