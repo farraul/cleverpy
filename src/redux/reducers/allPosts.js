@@ -1,4 +1,4 @@
-import {LOAD_POSTS, LOGOUT_POSTS} from '../types';
+import {LOAD_POSTS, LOGOUT_POSTS, UPDATE_POSTS} from '../types';
 
 const initialState = {
   
@@ -12,7 +12,8 @@ const allPosts = (state = initialState, action) => {
 
          case LOGOUT_POSTS : 
             return initialState;
-            
+         case UPDATE_POSTS:
+            return{ ...state, datitos: action.payload}; 
        
         default :
             return state

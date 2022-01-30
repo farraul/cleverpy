@@ -31,7 +31,20 @@ strong.uppercase {
     color: white;
     background-color: #8a0510;
     margin-top: 1em;
-    border-radius: 0em 0em 0.5em 0.5em;
+    border-radius: 0em 0em 0.5em 0em;
+    width: 50%;
+}
+.padding-each-post-update {
+    height: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: white;
+    background-color: #1c6400;
+    margin-top: 1em;
+    border-radius: 0em 0em 0em 0.5em;
+    width: 50%;
 }
 
 /**/
@@ -90,9 +103,39 @@ div#X {
 .pop-up-div-info-title {
     color: white;
     margin: 1em 0em 2em 0em;
+    font-size: 20px;
+    text-align: center;
 }
 .pop-up-div-info-title-cross {
     display: flex;
     padding: 0em 1em;
     flex-direction: column;
+}
+.button-each-post-all-posts {
+    display: flex;
+    justify-content: space-between;
+}
+.pop-up-div-info-update {
+    display: flex;
+    flex-direction: column;
+    padding: 0em 1em;
+    margin-bottom: 2em;
+    color: white;
+}
+.posts-inputs-update {
+    margin-top: 0.5em;
+    height: 2em;
+    border-radius: 0.2em;
+    border: unset;
+    padding: 0.3em;
+}
+.posts-inputs-update-send-data {
+    background-color: white;
+    color: #00718a;
+    margin-top: 1em;
+    border-radius: 2em;
+    height: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

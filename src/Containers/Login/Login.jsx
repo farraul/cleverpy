@@ -36,15 +36,11 @@ const Login = (props) => {
     }
 
     const goLogin = async () => {
-        if ((credentials.email === "prueba") && (credentials.password === "123456")) {
+        if ((credentials.email === "1") && (credentials.password === "1")) {
             props.dispatch({ type: LOAD_USER, payload: "logged_in" });
-
             history("/posts");
-            console.log("bien")
-
         }
         else {
-            console.log("error")
             setmsgError("Usuario o contraseña incorrectos")
         }
     }
