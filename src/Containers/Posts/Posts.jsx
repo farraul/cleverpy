@@ -7,13 +7,14 @@ import { LOAD_POSTS } from '../../redux/types';
 
 const Home = (props) => {
 
-    const [postSelected, setPostSelected] = useState([""]);
+    const [postIdSelected, setPostIdSelected] = useState([""]);
+    const [postInfoSelected, setPostInfoSelected] = useState([""]);
     const [Update, setUpdate] = useState();
 
 
 
     const seePopUpDelete = (id_post) => {
-        setPostSelected(id_post);
+        setPostIdSelected(id_post);
         var element_back = document.getElementById("pop-up-background-dark-full-width");
         element_back.classList.add("see-background-full-dark");
     }
@@ -23,23 +24,21 @@ const Home = (props) => {
         element_back.classList.remove("see-background-full-dark");
     }
 
-    const seePopUpUpdate = (id_post) => {
-        setPostSelected(id_post);
 
-        let id_post_n_v = {
-            target:
-            {
-                name: "id",
-                value: id_post
-            }
-        }
-        handlerInputs(id_post_n_v);
 
+    const seePopUpUpdate = (data) => {
+        setPostIdSelected(data.id);
+        setPostInfoSelected(data)
+ 
+        setUpdate({
+            id:data.id,
+            userId:data.userId,
+            title:data.title,
+            body:data.body
+        })
         var element_back = document.getElementById("pop-up-background-dark-full-width-delete");
         element_back.classList.add("see-background-full-dark");
     }
-
-
 
     const hidePopUpUpdate = async () => {
         var element_back = document.getElementById("pop-up-background-dark-full-width-delete");
@@ -47,7 +46,7 @@ const Home = (props) => {
     }
 
     const deletePost = async () => {
-        let data_filter = props.allPosts.filter(post => post.id !== postSelected);
+        let data_filter = props.allPosts.filter(post => post.id !== postIdSelected);
         props.dispatch({ type: LOAD_POSTS, payload: data_filter });
         hidePopUpDelete();
     }
@@ -63,9 +62,9 @@ const Home = (props) => {
 
     const updatePost = () => {
 
-        let data_filter = props.allPosts.filter(post => post.id !== postSelected);
+        let data_filter = props.allPosts.filter(post => post.id !== postIdSelected);
 
-        props.allPosts.filter(post => post.id == postSelected);
+        props.allPosts.filter(post => post.id == postIdSelected);
         data_filter.unshift(Update)
 
 
@@ -97,7 +96,7 @@ const Home = (props) => {
                             </div>
                         </div>
                         <div className='button-each-post-all-posts'>
-                            <div onClick={() => seePopUpUpdate(run.id)} className='padding-each-post-update'>
+                            <div onClick={() => seePopUpUpdate(run)} className='padding-each-post-update'>
                                 Actualizar
                             </div>
                             <div onClick={() => seePopUpDelete(run.id)} className='padding-each-post-delete'>
@@ -135,8 +134,8 @@ const Home = (props) => {
                     </div>
                     <div className='pop-up-div-info-update'>
                         <p className='pop-up-div-info-update-title'>Actualiza los datos del post</p>
-                        <input className='posts-inputs-update' type="text" name="title" title="name" lenght="30" onChange={handlerInputs} placeholder="Título"></input>
-                        <input className='posts-inputs-update' type="text" name="userId" title="name" lenght="30" onChange={handlerInputs} placeholder="Usuario"></input>
+                        <input className='posts-inputs-update' type="text" name="title" title="name" lenght="30" onChange={handlerInputs}  placeholder={"Título"}></input>
+                        <input className='posts-inputs-update' type="number" name="userId" title="name" lenght="30" onChange={handlerInputs} placeholder="Usuario"></input>
                         <textarea className='posts-inputs-update' type="text" name="body" title="name" lenght="30" onChange={handlerInputs} placeholder="Descripción"></textarea>
                         <div></div>
                         <div onClick={() => updatePost()} className='posts-inputs-update-send-data'>Actualizar</div>
