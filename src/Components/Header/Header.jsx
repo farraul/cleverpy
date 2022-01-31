@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react';
 import logo from '../../assets/images/Logotipo.png';
 import {useNavigate} from 'react-router-dom';
 import {connect} from 'react-redux';
@@ -14,7 +13,6 @@ const Header = (props) => {
     const goToContainer = (url) => {
         history(url);
     }
-    console.log("props user:", props.user)
 
     const logOut = () => {
         props.dispatch({ type: LOGOUT_USER });

@@ -11,6 +11,8 @@
     height: calc(100vh - 48px);
     display: flex;
     align-content: center;
+    background-image: url("../../assets/images/background-login.png");
+    background-size: cover;
 }
 .login-sendButton {
     background-color: #00b2ff;
@@ -23,7 +25,7 @@
 }
 
 input.login-form-input {
-    height: 2.5em;
+    height: 3em;
     margin-top: 1em;
     border-radius: 0.2em;
     padding: 0em 0.5em;

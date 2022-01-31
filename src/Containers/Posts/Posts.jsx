@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import { connect } from 'react-redux';
-import { UPDATE_POSTS } from '../../redux/types';
 import { LOAD_POSTS } from '../../redux/types';
 
 
@@ -53,7 +51,6 @@ const Home = (props) => {
 
     const handlerInputs = (e) => {
         setUpdate({ ...Update, [e.target.name]: e.target.value });
-        console.log("update", Update)
     }
 
 
@@ -76,8 +73,7 @@ const Home = (props) => {
     return (
         <div className='max-width-container-1200 home-container'>
             <div className='home-section-all-posts'>
-
-                {console.log("props.allPosts", props.allPosts)}
+                
                 {props.allPosts.map(run =>
 
                     <div key={run.id} className='home-section-all-posts-each-post'>
@@ -109,7 +105,7 @@ const Home = (props) => {
 
 
 
-            <div id="pop-up-background-dark-full-width" className=''>
+            <div id="pop-up-background-dark-full-width" className='hide'>
                 <div className="pop-up-div-info" id="pop-up-black-div-info">
                     <div className="pop-up-div-info-title-cross">
                         <div className="closeWindow" id="X" onClick={() => hidePopUpDelete()}>X</div>
@@ -127,7 +123,7 @@ const Home = (props) => {
             </div>
 
 
-            <div id="pop-up-background-dark-full-width-delete" className=''>
+            <div id="pop-up-background-dark-full-width-delete" className='hide'>
                 <div className="pop-up-div-info" id="pop-up-black-div-info">
                     <div className="pop-up-div-info-title-cross">
                         <div className="closeWindow" id="X" onClick={() => hidePopUpUpdate()}>X</div>

@@ -52,7 +52,9 @@ strong.uppercase {
     width: 50%;
 }
 
-/**/
+.hide{
+    display: none;
+}
 .pop-up-div-info{
     background-color: #00718a;
     top: 25%;
@@ -76,6 +78,7 @@ strong.uppercase {
     display: flex;
     justify-content: center;
     align-items: center;
+    visibility: visible;
 }
 .buttons-pop-up {
     display: flex;
