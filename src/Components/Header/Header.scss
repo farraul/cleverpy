@@ -1,0 +1,19 @@
+.header-section {
+    background-color: #00b2ff;
+    height: 3em;
+    display: flex;
+    align-items: center;
+    padding: 0em 2em;
+    justify-content: space-between;
+}
+.logo {
+    height: 2em;
+}
+.header-menu {
+    display: flex;
+    align-items: center;
+}
+.header-menu-each-div {
+    margin: 0em 1em;
+    cursor: pointer;
+}
