@@ -62,7 +62,6 @@ strong.uppercase {
     top: 25%;
     align-content: inherit;
     font-size: 1.4em;
-    cursor: pointer; 
     border-radius: 0.4em;
     padding: 0.5em 0em 0em 0em;
     display: block;
@@ -108,7 +107,9 @@ strong.uppercase {
 div#X {
     color: white;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+    width: 1em;
+    cursor: pointer;
 }
 .pop-up-div-info-title {
     color: white;
@@ -119,8 +120,7 @@ div#X {
 .pop-up-div-info-title-cross {
     display: flex;
     padding: 0em 1em;
-    flex-direction: column;
-}
+    justify-content: flex-end;}
 .button-each-post-all-posts {
     display: flex;
     justify-content: space-between;
@@ -148,4 +148,5 @@ div#X {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
