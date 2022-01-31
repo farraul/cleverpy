@@ -1,15 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { LOAD_POSTS } from '../../redux/types';
+import axios from 'axios';
 
 
 const Home = (props) => {
+    let res;
 
     const [postIdSelected, setPostIdSelected] = useState([""]);
-    const [postInfoSelected, setPostInfoSelected] = useState([""]);
     const [Update, setUpdate] = useState();
 
 
+    useEffect(() => {
+        takePosts();
+    }, []);
+
+    const takePosts = async () => {
+        try {
+            res = await axios.get("https://jsonplaceholder.typicode.com/posts");
+            props.dispatch({ type: LOAD_POSTS, payload: res.data });
+        }
+        catch (error) {
+        }
+    }
 
     const seePopUpDelete = (id_post) => {
         setPostIdSelected(id_post);
@@ -26,7 +39,6 @@ const Home = (props) => {
 
     const seePopUpUpdate = (data) => {
         setPostIdSelected(data.id);
-        setPostInfoSelected(data)
  
         setUpdate({
             id:data.id,

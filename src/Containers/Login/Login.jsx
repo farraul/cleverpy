@@ -1,32 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import { connect } from 'react-redux';
-import { LOAD_POSTS } from '../../redux/types';
 import { LOAD_USER } from '../../redux/types';
 import { useNavigate } from 'react-router-dom';
 
 
 
 const Login = (props) => {
-    let res;
     const [credentials, setCredentials] = useState({ email: '', password: '' });
     const [msgError, setmsgError] = useState("");
 
     const history = useNavigate();
    
 
-    useEffect(() => {
-        takePosts();
-    }, []);
 
-    const takePosts = async () => {
-        try {
-            res = await axios.get("https://jsonplaceholder.typicode.com/posts");
-            props.dispatch({ type: LOAD_POSTS, payload: res.data });
-        }
-        catch (error) {
-        }
-    }
     const handlerInputs = (e) => {
         setCredentials({ ...credentials, [e.target.name]: e.target.value });
     }
