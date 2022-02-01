@@ -120,7 +120,15 @@ div#X {
 .pop-up-div-info-title-cross {
     display: flex;
     padding: 0em 1em;
-    justify-content: flex-end;}
+    justify-content: flex-end;
+}
+.pop-up-div-info-title-cross-delete {
+    display: flex;
+    padding: 0em 1em;
+    justify-content: flex-end;
+    flex-direction: column;
+    
+}
 .button-each-post-all-posts {
     display: flex;
     justify-content: space-between;
@@ -149,4 +157,9 @@ div#X {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+}
+
+.closeWindow-div-delete {
+    display: flex;
+    justify-content: flex-end;
 }
