@@ -1,17 +1,28 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import { connect } from 'react-redux';
-import { UPDATE_POSTS } from '../../redux/types';
 import { LOAD_POSTS } from '../../redux/types';
+import axios from 'axios';
 
 
 const Home = (props) => {
+    let res;
 
     const [postIdSelected, setPostIdSelected] = useState([""]);
-    const [postInfoSelected, setPostInfoSelected] = useState([""]);
     const [Update, setUpdate] = useState();
 
 
+    useEffect(() => {
+        takePosts();
+    }, []);
+
+    const takePosts = async () => {
+        try {
+            res = await axios.get("https://jsonplaceholder.typicode.com/posts");
+            props.dispatch({ type: LOAD_POSTS, payload: res.data });
+        }
+        catch (error) {
+        }
+    }
 
     const seePopUpDelete = (id_post) => {
         setPostIdSelected(id_post);
@@ -28,13 +39,12 @@ const Home = (props) => {
 
     const seePopUpUpdate = (data) => {
         setPostIdSelected(data.id);
-        setPostInfoSelected(data)
- 
+
         setUpdate({
-            id:data.id,
-            userId:data.userId,
-            title:data.title,
-            body:data.body
+            id: data.id,
+            userId: data.userId,
+            title: data.title,
+            body: data.body
         })
         var element_back = document.getElementById("pop-up-background-dark-full-width-delete");
         element_back.classList.add("see-background-full-dark");
@@ -53,7 +63,6 @@ const Home = (props) => {
 
     const handlerInputs = (e) => {
         setUpdate({ ...Update, [e.target.name]: e.target.value });
-        console.log("update", Update)
     }
 
 
@@ -77,7 +86,6 @@ const Home = (props) => {
         <div className='max-width-container-1200 home-container'>
             <div className='home-section-all-posts'>
 
-                {console.log("props.allPosts", props.allPosts)}
                 {props.allPosts.map(run =>
 
                     <div key={run.id} className='home-section-all-posts-each-post'>
@@ -109,11 +117,15 @@ const Home = (props) => {
 
 
 
-            <div id="pop-up-background-dark-full-width" className=''>
+            <div id="pop-up-background-dark-full-width" className='hide'>
                 <div className="pop-up-div-info" id="pop-up-black-div-info">
-                    <div className="pop-up-div-info-title-cross">
-                        <div className="closeWindow" id="X" onClick={() => hidePopUpDelete()}>X</div>
-                        <p className='pop-up-div-info-title'>¿Estas seguro de borrar este post?</p>
+                    <div className="pop-up-div-info-title-cross-delete">
+                        <div className='closeWindow-div-delete'>
+                            <div className="closeWindow" id="X" onClick={() => hidePopUpDelete()}>X</div>
+                        </div>
+                        <div>
+                            <p className='pop-up-div-info-title'>¿Estas seguro de borrar este post?</p>
+                        </div>
                     </div>
                     <div className='buttons-pop-up'>
                         <div onClick={() => hidePopUpDelete()} className='button-no-delete'>
@@ -127,14 +139,14 @@ const Home = (props) => {
             </div>
 
 
-            <div id="pop-up-background-dark-full-width-delete" className=''>
+            <div id="pop-up-background-dark-full-width-delete" className='hide'>
                 <div className="pop-up-div-info" id="pop-up-black-div-info">
                     <div className="pop-up-div-info-title-cross">
                         <div className="closeWindow" id="X" onClick={() => hidePopUpUpdate()}>X</div>
                     </div>
                     <div className='pop-up-div-info-update'>
                         <p className='pop-up-div-info-update-title'>Actualiza los datos del post</p>
-                        <input className='posts-inputs-update' type="text" name="title" title="name" lenght="30" onChange={handlerInputs}  placeholder={"Título"}></input>
+                        <input className='posts-inputs-update' type="text" name="title" title="name" lenght="30" onChange={handlerInputs} placeholder={"Título"}></input>
                         <input className='posts-inputs-update' type="number" name="userId" title="name" lenght="30" onChange={handlerInputs} placeholder="Usuario"></input>
                         <textarea className='posts-inputs-update' type="text" name="body" title="name" lenght="30" onChange={handlerInputs} placeholder="Descripción"></textarea>
                         <div></div>

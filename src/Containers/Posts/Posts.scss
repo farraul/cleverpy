@@ -38,6 +38,7 @@ strong.uppercase {
     margin-top: 1em;
     border-radius: 0em 0em 0.5em 0em;
     width: 50%;
+    cursor: pointer;
 }
 .padding-each-post-update {
     height: 3em;
@@ -50,15 +51,17 @@ strong.uppercase {
     margin-top: 1em;
     border-radius: 0em 0em 0em 0.5em;
     width: 50%;
+    cursor: pointer;
 }
 
-/**/
+.hide{
+    display: none;
+}
 .pop-up-div-info{
     background-color: #00718a;
     top: 25%;
     align-content: inherit;
     font-size: 1.4em;
-    cursor: pointer; 
     border-radius: 0.4em;
     padding: 0.5em 0em 0em 0em;
     display: block;
@@ -76,6 +79,7 @@ strong.uppercase {
     display: flex;
     justify-content: center;
     align-items: center;
+    visibility: visible;
 }
 .buttons-pop-up {
     display: flex;
@@ -103,7 +107,9 @@ strong.uppercase {
 div#X {
     color: white;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+    width: 1em;
+    cursor: pointer;
 }
 .pop-up-div-info-title {
     color: white;
@@ -114,7 +120,14 @@ div#X {
 .pop-up-div-info-title-cross {
     display: flex;
     padding: 0em 1em;
+    justify-content: flex-end;
+}
+.pop-up-div-info-title-cross-delete {
+    display: flex;
+    padding: 0em 1em;
+    justify-content: flex-end;
     flex-direction: column;
+    
 }
 .button-each-post-all-posts {
     display: flex;
@@ -143,4 +156,10 @@ div#X {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+}
+
+.closeWindow-div-delete {
+    display: flex;
+    justify-content: flex-end;
 }
