@@ -25,8 +25,8 @@ const Header = (props) => {
             <div className='header-section'>
                 <img className="logo" src={logo} />
                 <div className='header-menu'>
-                    {props.user != "logged_in" && <div className="header-menu-each-div" onClick={() => goToContainer("/")}>Login</div>}
-                    { props.user==="logged_in" && <div className="header-menu-each-div" onClick={() => goToContainer("/posts")}>Posts</div>}
+                    {/*props.user != "logged_in" && <div className="header-menu-each-div" onClick={() => goToContainer("/")}>Login</div>*/}
+                    {/* props.user==="logged_in" && <div className="header-menu-each-div" onClick={() => goToContainer("/posts")}>Posts</div> */}
                     { props.user==="logged_in" && <div className="header-menu-each-div" onClick={() => logOut()}>Desconectar</div>}
                 </div>
             </div>

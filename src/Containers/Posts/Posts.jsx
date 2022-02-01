@@ -5,7 +5,7 @@ import axios from 'axios';
 
 
 const Home = (props) => {
-    let res;
+    
 
     const [postIdSelected, setPostIdSelected] = useState([""]);
     const [Update, setUpdate] = useState();
@@ -17,7 +17,7 @@ const Home = (props) => {
 
     const takePosts = async () => {
         try {
-            res = await axios.get("https://jsonplaceholder.typicode.com/posts");
+           let res = await axios.get("https://jsonplaceholder.typicode.com/posts");
             props.dispatch({ type: LOAD_POSTS, payload: res.data });
         }
         catch (error) {
