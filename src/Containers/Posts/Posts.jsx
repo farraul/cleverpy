@@ -16,7 +16,6 @@ const Home = (props) => {
         takePosts();
     }, []);
 
-
     const takePosts = async () => {
             let res = await axios.get("https://jsonplaceholder.typicode.com/posts");
             props.dispatch({ type: LOAD_POSTS, payload: res.data });
@@ -26,7 +25,6 @@ const Home = (props) => {
         setShowModalDelete(true)
         setPostIdSelected(id_post);
     }
-
 
     const seePopUpUpdate = (data) => {
         setPostIdSelected(data.id);
@@ -38,8 +36,6 @@ const Home = (props) => {
             body: data.body
         })
     }
-
-
 
     return (
         <div className='all-posts-box home-container'>
@@ -71,7 +67,6 @@ const Home = (props) => {
                         </div>
                     )}
                 </div>
-
             }
 
             {showModalDelete &&
@@ -81,9 +76,7 @@ const Home = (props) => {
                 <ModalUpdate updateData={updateData} postIdSelected={postIdSelected} setShowModalUpdate={setShowModalUpdate} />
             }
 
-
         </div>
-
     )
 }
 

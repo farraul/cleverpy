@@ -3,18 +3,14 @@ import { connect } from 'react-redux';
 import { LOAD_USER } from '../../redux/types';
 import { useNavigate } from 'react-router-dom';
 
-
 const Login = (props) => {
     const user="1";
     const password="1";
  
-
     const [credentials, setCredentials] = useState({ email: '', password: '' });
     const [msgError, setMsgError] = useState("");
 
     const history = useNavigate();
-   
-
 
     const handlerInputs = (e) => {
         setCredentials({ ...credentials, [e.target.name]: e.target.value });
@@ -31,7 +27,6 @@ const Login = (props) => {
         }
     }
 
-
     return (
         <div className='login-container'>
             <div className='login-container-info'>
@@ -42,7 +37,6 @@ const Login = (props) => {
                 <div className="login-sendButton" onClick={() => goLogin()}>Login</div>
             </div>
         </div>
-
     )
 }
 
