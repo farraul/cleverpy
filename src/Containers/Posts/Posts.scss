@@ -53,11 +53,15 @@ strong.uppercase {
     width: 50%;
     cursor: pointer;
 }
+.all-posts-box {
+    max-width: 1200px;
+    margin: auto;
+  }
 
 .hide{
     display: none;
 }
-.pop-up-div-info{
+.pop-up-info{
     background-color: #00718a;
     top: 25%;
     align-content: inherit;
@@ -68,19 +72,7 @@ strong.uppercase {
     width: 100%;
     max-width: 18em;
 }
-.see-background-full-dark{
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.856);
-    position: fixed;
-    z-index: 9999;
-    top: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    visibility: visible;
-}
+
 .buttons-pop-up {
     display: flex;
     justify-content: space-evenly;
@@ -111,18 +103,18 @@ div#X {
     width: 1em;
     cursor: pointer;
 }
-.pop-up-div-info-title {
+.pop-up-info-title {
     color: white;
     margin: 1em 0em 2em 0em;
     font-size: 20px;
     text-align: center;
 }
-.pop-up-div-info-title-cross {
+.pop-up-info-title-cross {
     display: flex;
     padding: 0em 1em;
     justify-content: flex-end;
 }
-.pop-up-div-info-title-cross-delete {
+.pop-up-info-title-cross-delete {
     display: flex;
     padding: 0em 1em;
     justify-content: flex-end;
@@ -132,31 +124,6 @@ div#X {
 .button-each-post-all-posts {
     display: flex;
     justify-content: space-between;
-}
-.pop-up-div-info-update {
-    display: flex;
-    flex-direction: column;
-    padding: 0em 1em;
-    margin-bottom: 2em;
-    color: white;
-}
-.posts-inputs-update {
-    margin-top: 0.5em;
-    height: 2em;
-    border-radius: 0.2em;
-    border: unset;
-    padding: 0.3em;
-}
-.posts-inputs-update-send-data {
-    background-color: white;
-    color: #00718a;
-    margin-top: 1em;
-    border-radius: 2em;
-    height: 2em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
 }
 
 .closeWindow-div-delete {
