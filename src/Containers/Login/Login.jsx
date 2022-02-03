@@ -1,13 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState    } from 'react';
 import { connect } from 'react-redux';
 import { LOAD_USER } from '../../redux/types';
 import { useNavigate } from 'react-router-dom';
 
 
-
 const Login = (props) => {
+    const user="1";
+    const password="1";
+ 
+
     const [credentials, setCredentials] = useState({ email: '', password: '' });
-    const [msgError, setmsgError] = useState("");
+    const [msgError, setMsgError] = useState("");
 
     const history = useNavigate();
    
@@ -17,13 +20,14 @@ const Login = (props) => {
         setCredentials({ ...credentials, [e.target.name]: e.target.value });
     }
 
-    const goLogin = async () => {
-        if ((credentials.email === "1") && (credentials.password === "1")) {
+    const goLogin = () => {
+
+        if ((credentials.email === user) && (credentials.password === password)) {
             props.dispatch({ type: LOAD_USER, payload: "logged_in" });
             history("/posts");
-        }
-        else {
-            setmsgError("Usuario o contraseña incorrectos")
+            return
+        } else {
+            setMsgError("Usuario o contraseña incorrectos")
         }
     }
 

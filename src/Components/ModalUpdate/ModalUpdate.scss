@@ -1,0 +1,25 @@
+.pop-up-info-update {
+    display: flex;
+    flex-direction: column;
+    padding: 0em 1em;
+    margin-bottom: 2em;
+    color: white;
+}
+.posts-inputs-update {
+    margin-top: 0.5em;
+    height: 2em;
+    border-radius: 0.2em;
+    border: unset;
+    padding: 0.3em;
+}
+.posts-inputs-update-send-data {
+    background-color: white;
+    color: #00718a;
+    margin-top: 1em;
+    border-radius: 2em;
+    height: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
