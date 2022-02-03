@@ -37,7 +37,6 @@ const Login = (props) => {
             <div className='login-container-info'>
                 <input className="login-form-input" type='email' name='email' title='email' onChange={handlerInputs} lenght='30' placeholder="Email" />
                 <input className="login-form-input" type='password' name='password' title='password' onChange={handlerInputs} lenght='30' placeholder="Contraseña" />
-                <br />
                 <div className="error">{msgError}</div>
 
                 <div className="login-sendButton" onClick={() => goLogin()}>Login</div>
