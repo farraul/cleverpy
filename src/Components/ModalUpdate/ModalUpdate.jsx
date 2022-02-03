@@ -2,15 +2,10 @@ import { connect } from 'react-redux';
 import React, { useState } from 'react';
 import { LOAD_POSTS } from '../../redux/types';
 
-
-
-
 const ModalDelete = (props) => {
 
     const postIdSelected=props.postIdSelected;
     const [update, setUpdate] = useState(props.updateData);
-
-
 
     const handlerInputs = (e) => {
         setUpdate({ ...update, [e.target.name]: e.target.value });
@@ -44,7 +39,6 @@ const ModalDelete = (props) => {
                 </div>
             </div>
         </div>
-
     )
 
 }
