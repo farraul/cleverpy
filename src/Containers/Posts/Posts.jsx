@@ -18,13 +18,8 @@ const Home = (props) => {
 
 
     const takePosts = async () => {
-        try {
-
             let res = await axios.get("https://jsonplaceholder.typicode.com/posts");
             props.dispatch({ type: LOAD_POSTS, payload: res.data });
-        }
-        catch (error) {
-        }
     }
 
     const seePopUpDelete = (id_post) => {
