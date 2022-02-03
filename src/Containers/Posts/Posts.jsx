@@ -19,7 +19,7 @@ const Home = (props) => {
 
     const takePosts = async () => {
         try {
-            console.log("take posts")
+
             let res = await axios.get("https://jsonplaceholder.typicode.com/posts");
             props.dispatch({ type: LOAD_POSTS, payload: res.data });
         }
@@ -48,8 +48,6 @@ const Home = (props) => {
 
     return (
         <div className='all-posts-box home-container'>
-            {console.log("props", props.allPosts)}
-
 
             {props.allPosts[0] !== undefined &&
                 <div className='home-section-all-posts'>

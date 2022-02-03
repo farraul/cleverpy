@@ -5,9 +5,7 @@ import { LOAD_POSTS } from '../../redux/types';
 
 const ModalDelete = (props) => {
 
-
     const postIdSelected = props.postIdSelected;
-
 
     const hidePopUpDelete = () => {
         props.setShowModalDelete(false)
