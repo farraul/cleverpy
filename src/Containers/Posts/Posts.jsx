@@ -56,16 +56,15 @@ const Home = (props) => {
                     {props.allPosts.map(post =>
                         <div key={post.id} className='home-section-all-posts-each-post'>
                             <div className='padding-each-post'>
-                                <div>
+                                <div className='home-section-all-posts-each-post-separation'>
                                     <strong className='uppercase'>{post.title}</strong>
                                 </div>
-                                <div>
-                                    {post.userId}
-                                </div>
-                                <div>
+
+                                <div className='home-section-all-posts-each-post-separation'>
                                     {post.body}
                                 </div>
-                                <div>
+                                <div className='home-section-all-posts-each-post-separation'>
+                                    Usuario: {post.userId}
                                 </div>
                             </div>
                             <div className='button-each-post-all-posts'>

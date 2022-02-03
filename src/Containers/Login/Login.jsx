@@ -1,4 +1,4 @@
-import React, { useState    } from 'react';
+import React, { useState} from 'react';
 import { connect } from 'react-redux';
 import { LOAD_USER } from '../../redux/types';
 import { useNavigate } from 'react-router-dom';
