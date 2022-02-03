@@ -5,9 +5,7 @@ import { LOAD_POSTS } from '../../redux/types';
 
 const ModalDelete = (props) => {
 
-
     const postIdSelected = props.postIdSelected;
-
 
     const hidePopUpDelete = () => {
         props.setShowModalDelete(false)
@@ -22,7 +20,7 @@ const ModalDelete = (props) => {
     return (
         <div className="see-background-full-dark">
             <div className="pop-up-info" id="pop-up-black-info">
-                <div className="pop-up-div-info-title-cross-delete">
+                <div className="pop-up-info-title-cross-delete">
                     <div className='close-window-delete'>
                             <div className="closewindow" id="X" onClick={() => hidePopUpDelete()}>X</div>
                     </div>

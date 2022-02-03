@@ -3,16 +3,30 @@
     border-radius: 0.5em;
     padding: 1.5em  0em 0em  0em;
     margin: 1em 1em;
-    height: fit-content;
     box-shadow: 1px 1px 8px #aaaaaa;
     width: 100%;
     max-width: 23em;
     height: 100%;
-    min-height: 14em;
+    min-height: 16em;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
+
+.see-background-full-dark {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.856);
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: visible;
+}
+
 .home-section-all-posts {
     display: flex;
     flex-direction: row;
@@ -24,9 +38,11 @@
 strong.uppercase {
     text-transform: capitalize;
 }
+
 .padding-each-post {
     padding: 0em 1em;
 }
+
 .padding-each-post-delete {
     height: 3em;
     display: flex;
@@ -40,6 +56,7 @@ strong.uppercase {
     width: 50%;
     cursor: pointer;
 }
+
 .padding-each-post-update {
     height: 3em;
     display: flex;
@@ -56,12 +73,12 @@ strong.uppercase {
 .all-posts-box {
     max-width: 1200px;
     margin: auto;
-  }
+}
 
 .hide{
     display: none;
 }
-.pop-up-info{
+.pop-up-info {
     background-color: #00718a;
     top: 25%;
     align-content: inherit;
@@ -85,8 +102,8 @@ strong.uppercase {
     border-radius: 0em 0em 0em 0.2em;
     width: 100%;
     text-align: center;
-
 }
+
 .button-delete {
     background-color: #8a0510;
     padding: 0.3em 1em;
@@ -94,8 +111,8 @@ strong.uppercase {
     border-radius: 0em 0em 0.2em 0em;
     width: 100%;
     text-align: center;
- 
 }
+
 div#X {
     color: white;
     display: flex;
@@ -103,30 +120,32 @@ div#X {
     width: 1em;
     cursor: pointer;
 }
+
 .pop-up-info-title {
     color: white;
     margin: 1em 0em 2em 0em;
     font-size: 20px;
     text-align: center;
 }
+
 .pop-up-info-title-cross {
     display: flex;
     padding: 0em 1em;
     justify-content: flex-end;
 }
+
 .pop-up-info-title-cross-delete {
     display: flex;
     padding: 0em 1em;
     justify-content: flex-end;
-    flex-direction: column;
-    
+    flex-direction: column; 
 }
+
 .button-each-post-all-posts {
     display: flex;
     justify-content: space-between;
 }
 
-.closeWindow-div-delete {
-    display: flex;
-    justify-content: flex-end;
+.home-section-all-posts-each-post-separation {
+    margin-top: 0.8em;
 }
