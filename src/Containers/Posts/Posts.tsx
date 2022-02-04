@@ -5,36 +5,54 @@ import axios from 'axios';
 import ModalDelete from '../../Components/ModalDelete/ModalDelete';
 import ModalUpdate from '../../Components/ModalUpdate/ModalUpdate';
 
-const Home = (props) => {
+interface IData {
+    id: number;
+    title: string;
+    userId: number;
+    body: string;
+}
 
-    const [postIdSelected, setPostIdSelected] = useState([""]);
-    const [updateData, setUpdateData] = useState();
-    const [showModalDelete, setShowModalDelete] = useState(false);
-    const [showModalUpdate, setShowModalUpdate] = useState(false);
+interface IHomeProps {
+    dispatch: ( dispatch: { type: string, payload: string } ) => void;
+    allPosts: IData[];
+}
 
-    useEffect(() => {
+const Home = (props: IHomeProps) => {
+
+    const [ postIdSelected, setPostIdSelected ] = useState(0);
+
+    const [ updateData, setUpdateData ] = useState<IData>({
+        id: 0,
+        title: "",
+        body: "",
+        userId: 0
+    });
+    const [ showModalDelete, setShowModalDelete ] = useState( false );
+    const [ showModalUpdate, setShowModalUpdate ] = useState( false );
+
+    useEffect( () => {
         takePosts();
-    }, []);
+    }, [] );
 
     const takePosts = async () => {
-            let res = await axios.get("https://jsonplaceholder.typicode.com/posts");
+            let res = await axios.get( "https://jsonplaceholder.typicode.com/posts" );
             props.dispatch({ type: LOAD_POSTS, payload: res.data });
     }
 
-    const seePopUpDelete = (id_post) => {
-        setShowModalDelete(true)
-        setPostIdSelected(id_post);
+    const seePopUpDelete = ( id_post: number ) => {
+        setShowModalDelete( true);
+        setPostIdSelected( id_post );
     }
 
-    const seePopUpUpdate = (data) => {
-        setPostIdSelected(data.id);
-        setShowModalUpdate(true)
+    const seePopUpUpdate = ( data: IData ) => {
+        setPostIdSelected( data.id );
+        setShowModalUpdate( true );
         setUpdateData({
             id: data.id,
             userId: data.userId,
             title: data.title,
             body: data.body
-        })
+        });
     }
 
     return (
@@ -42,13 +60,12 @@ const Home = (props) => {
 
             {props.allPosts[0] !== undefined &&
                 <div className='home-section-all-posts'>
-                    {props.allPosts.map(post =>
+                    {props.allPosts.map( ( post: IData ) =>
                         <div key={post.id} className='home-section-all-posts-each-post'>
                             <div className='padding-each-post'>
                                 <div className='home-section-all-posts-each-post-separation'>
                                     <strong className='uppercase'>{post.title}</strong>
                                 </div>
-
                                 <div className='home-section-all-posts-each-post-separation'>
                                     {post.body}
                                 </div>
@@ -80,7 +97,6 @@ const Home = (props) => {
     )
 }
 
-export default connect((state) => ({
-    allPosts: state.allPosts,
-
-}))(Home);
+export default connect( ( state: { allPosts: IData[] } ) => ({
+    allPosts: state.allPosts
+}))( Home );
