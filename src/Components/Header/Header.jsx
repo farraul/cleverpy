@@ -1,4 +1,3 @@
-import logo from '../../assets/images/Logotipo.png';
 import {useNavigate} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {LOGOUT_USER} from '../../redux/types';
@@ -23,7 +22,8 @@ const Header = (props) => {
         <header>
 
             <div className='header-section'>
-                <img className="logo" src={logo} />
+                {/* aqui irá el logotipo correcto <img className="logo" src={logo} /> */}
+                Raul 
                 <div className='header-menu'>
                     {/*props.user != "logged_in" && <div className="header-menu-each-div" onClick={() => goToContainer("/")}>Login</div>*/}
                     {/* props.user==="logged_in" && <div className="header-menu-each-div" onClick={() => goToContainer("/posts")}>Posts</div> */}
