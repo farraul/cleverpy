@@ -33,7 +33,7 @@
 Con el siguiente contenido:
  <reference types="react-scripts" />
  
- 🔷 Crear archivo: tsconfig,json
+ 🔷 Crear archivo: tsconfig.json
  
  Con el siguiente contenido:
  
