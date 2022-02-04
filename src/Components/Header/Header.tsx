@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { LOGOUT_USER } from '../../redux/types';
+import  logo  from '../../assets/images/Logotipo.png'
 
 interface IHeaderProps {
     dispatch: (dispatch: { type: string }) => void;
@@ -18,8 +19,7 @@ const Header = (props: IHeaderProps) => {
     return (
         <header>
             <div className='header-section'>
-                {/* aqui irá el logotipo correcto <img className="logo" src={logo} /> */}
-                Raul
+                { <img className="logo" src={logo} /> }
                 <div className='header-menu'>
                     {props.user === "logged_in" && <div className="header-menu-each-div" onClick={() => logOut()}>Desconectar</div>}
                 </div>
