@@ -1,20 +1,28 @@
 import { connect } from 'react-redux';
 import { LOAD_POSTS } from '../../redux/types';
 
+interface IData {
+    id: number;
+}
 
+interface IModalProps {
+    postIdSelected: number;
+    setShowModalDelete: ( showModalDelete: boolean ) => void;
+    allPosts: IData[];
+    dispatch: ( dispatch: { type: string, payload: IData[] } ) => void;
+}
 
-const ModalDelete = (props) => {
+const ModalDelete = (props: IModalProps) => {
 
     const postIdSelected = props.postIdSelected;
-
     const hidePopUpDelete = () => {
-        props.setShowModalDelete(false)
+        props.setShowModalDelete( false )
     }
 
     const deletePost = () => {
-        let data_filter = props.allPosts.filter(post => post.id !== postIdSelected);
+        let data_filter = props.allPosts.filter( ( post: { id: number } ): boolean => post.id !== postIdSelected);
         props.dispatch({ type: LOAD_POSTS, payload: data_filter });
-        props.setShowModalDelete(false)
+        props.setShowModalDelete( false )
     }
 
     return (
@@ -41,8 +49,8 @@ const ModalDelete = (props) => {
     )
 
 }
-export default connect((state) => ({
+export default connect( ( state: { allPosts: IData[] } ) => ({
     allPosts: state.allPosts,
-}))(ModalDelete);
+}))( ModalDelete );
 
 
