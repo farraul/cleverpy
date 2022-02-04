@@ -1,13 +1,24 @@
 ## Proyecto Cleverpy
 ### Javascript, React, Typescript, HTML, SCSS
-Usuario: cleverpy
-Contraseña: 12345
+
+<br />
+
+|Usuario | Contraseña |
+| :---         |  :---         | 
+ cleverpy | 12345
+
+<br />
 
 ### Comandos para añadir Typescript
-npm i -D typescript @types/node @types/react @types/react-dom @types/jest
-npm install @types/react-redux
+🔷 npm i -D typescript @types/node @types/react @types/react-dom @types/jest
+
+🔷  npm install @types/react-redux
+
+<br />
 
 ### Pages
+***
+###
 #### Login
 ![image](https://user-images.githubusercontent.com/28491001/152609734-e90e6a95-33c0-4608-be5e-b9a98d07529e.png)
 #### Posts
