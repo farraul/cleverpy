@@ -34,9 +34,8 @@ Con el siguiente contenido:
  <reference types="react-scripts" />
  
  🔷 Crear archivo: tsconfig.json
- 
+ <br /> 
  Con el siguiente contenido:
- 
  {<br />
     "compilerOptions": {
     
