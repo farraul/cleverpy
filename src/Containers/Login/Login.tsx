@@ -9,8 +9,8 @@ interface ILoginProps {
 
 const Login = ( props: ILoginProps ) => {
 
-    const user: string = "1";
-    const password: string = "1";
+    const user: string = "cleverpy";
+    const password: string = "12345";
  
     const [ credentials, setCredentials ] = useState({ email: '', password: '' });
     const [ msgError, setMsgError ] = useState("");
