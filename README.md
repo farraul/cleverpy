@@ -31,7 +31,10 @@
 ### Acciones
 🔷 Crear en src el archivo: react-app-env.d.ts 
 Con el siguiente contenido:
- <reference types="react-scripts" />
+ <br /> 
+![image](https://user-images.githubusercontent.com/28491001/152647592-0c818694-72ec-47c9-8b25-7df3b4b48d9d.png)
+ <br /> 
+
  
  🔷 Crear archivo: tsconfig.json
  <br /> 
